@@ -17,26 +17,32 @@ Now you should have your WireGuard keys generated. Please do not share the priva
 Make a configuration file in /etc/wireguard
 
 # Sample server config file:
-Server Interface
+```
+# Server Interface
 [Interface]
 PrivateKey = (Generated Private Key)
 Address = (IPv4 and/or IPv6 Address)/prefix
 ListenPort = (Port number, make sure to allow that port onto your firewall if enabled)
 
-Client Interface
+# Client Interface
 [Peer]
 PublicKey = (Generated Client Public Key)
+PresharedKey = (Generated preshared key, Optional)
 AllowedIPs = (0.0.0.0/0 and/or ::/0 for encryption, or client IPv4 and/or IPv6 address)
+```
 
 # Sample client config file:
-Client Interface
+```
+# Client Interface
 [Interface]
-PrivateKey = (Generated Private Key)
+PrivateKey = (Generated Client Private Key)
 Address = (IPv4 and/or IPv6 address)/prefix
 DNS = (DNS Servers)
 
-Server Interface
+# Server Interface
 [Peer]
 PublicKey = (Generated Server Public Key)
+PresharedKey = (Generated preshared key, Optional)
 AllowedIPs = (0.0.0.0/0 and/or ::/0 for encryption, or client IPv4 and/or IPv6 address)
 EndPoint = (server ip:port number)
+```
