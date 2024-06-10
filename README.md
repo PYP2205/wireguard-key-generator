@@ -2,19 +2,33 @@
 A Linux Shell progrm that generates Public and Private Keys for your WireGuard Server and Client configuration files.
 
 # Instructions
-Make sure you have WireGuard installed in your Linux device. If it's not installed,
+1. Make sure you have WireGuard installed in your Linux device. If it's not installed,
 then run:
-sudo apt install wireguard
+- Debian and Debian-Based Systems:
+  ```
+  sudo apt install wireguard-tools
+  ```
+- RHEL and RHEL-Based Systems:
+  ```
+  sudo dnf install wireguard-tools
+  ```
+- Arch and Arch-Based Systems:
+  ```
+  sudo pacman -S wireguard-tools
+  ```
 
-If you already have it installed, then clone this repository:
+2. If you already have it installed, then clone this repository:
+```
 git clone https://github.com/ParamonPlay2205/wireguard-key-generator/
+```
 
-Now run the file with root privliges
+3. Now run the file with root privliges (If you are not root):
+```
 sudo sh gen_keys.sh
+```
+4. Now you should have your WireGuard keys generated. Please do not share the private or pre-shared keys with anyone.
 
-Now you should have your WireGuard keys generated. Please do not share the private keys with anyone.
-
-Make a configuration file in /etc/wireguard
+Make a configuration file in "/etc/wireguard":
 
 # Sample server config file:
 ```
